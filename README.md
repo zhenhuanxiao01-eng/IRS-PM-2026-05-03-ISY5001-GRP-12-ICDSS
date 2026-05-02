@@ -33,7 +33,7 @@ The key contribution of the project is the transparent reasoning chain. Each sys
 
 | Official Full Name | Student ID | Work Items (Who Did What) | Email (Optional) |
 | :--- | :---: | :--- | :--- |
-| Xiao Zhenhuan | A403040523R | Individual project owner. Designed the ICDSS concept, implemented the Dockerized architecture, built the Streamlit UI, developed the data pipeline, Neo4j ingestion, rule engine, learned similarity engine, cognitive Graph-RAG workflow, metrics dashboard, graph visualization, one-click launcher, README, and project report. | - |
+| Xiao Zhenhuan | A0340523R | Individual project owner. Designed the ICDSS concept, implemented the Dockerized architecture, built the Streamlit UI, developed the data pipeline, Neo4j ingestion, rule engine, learned similarity engine, cognitive Graph-RAG workflow, metrics dashboard, graph visualization, one-click launcher, README, and project report. | - |
 
 ---
 
