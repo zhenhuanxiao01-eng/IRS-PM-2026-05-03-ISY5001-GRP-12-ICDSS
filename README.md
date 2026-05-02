@@ -7,7 +7,6 @@
 
 **Project Theme:** A Hybrid Reasoning Framework for Explainable Cardiovascular Decision Support
 
-**Project Type:** Individual Work
 
 ---
 
