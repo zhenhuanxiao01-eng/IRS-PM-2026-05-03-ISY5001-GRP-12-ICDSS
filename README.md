@@ -1,132 +1,215 @@
-﻿### [ Practice Module ] Project Submission Template: Github Repository & Zip File
-
-**[ Naming Convention ]** CourseCode-StartDate-BatchCode-TeamName-ProjectName.zip
-
-* **[ MTech Thru-Train Group Project Naming Example ]** IRS-PM-2020-01-18-IS02PT-GRP-AwsomeSG-HDB_BTO_Recommender.zip
-
-* **[ MTech Stackable Group Project Naming Example ]** IRS-PM-2020-01-18-STK02-GRP-AwsomeSG-HDB_BTO_Recommender.zip
-
-[Online editor for this README.md markdown file](https://pandao.github.io/editor.md/en.html "pandao")
-
----
-
-### <<<<<<<<<<<<<<<<<<<< Start of Template >>>>>>>>>>>>>>>>>>>>
+# [ Practice Module ] Project Submission
 
 ---
 
 ## SECTION 1 : PROJECT TITLE
-## Singapore Housing & Deveoplment Board - BTO Recommender System
+## Intelligent Clinical Decision Support System (ICDSS)
 
-<img src="SystemCode/clips/static/hdb-bto.png"
-     style="float: left; margin-right: 0px;" />
+**Project Theme:** A Hybrid Reasoning Framework for Explainable Cardiovascular Decision Support
+
+**Project Type:** Individual Work
 
 ---
 
 ## SECTION 2 : EXECUTIVE SUMMARY / PAPER ABSTRACT
-Singapore ranks amongst countries with the highest population density in the world. In a bid to have firm control over long term urban planning, the Singapore government came up with the “Built to Order” (abbreviated BTO) initiative back in 2001. These are new Housing Development Board (HDB) flats tightly controlled by their eligibility and quantity released every year. In more recent years, the modern BTO scheme in Singapore requires a waiting period of 3-4 years, and is generally targeted at young Singaporean couples looking to purchase their first property and set up a family. Nationality and income ceilings are some of the broad filters that determine one’s eligibility for the highly sought after projects. 
 
+Cardiovascular diseases remain one of the leading causes of mortality globally. In clinical environments, healthcare practitioners must interpret structured patient measurements, risk factors, guideline knowledge, and historical case evidence under time pressure. While artificial intelligence can support this process, many healthcare AI systems face trust and adoption barriers because their outputs are difficult to explain.
 
-Our team, comprising of 6 young Singaporeans, all hope to be property owners one day. Many of our peers opt for BTO flats due to their affordability, existence of financial aid from the government, as well as their resale value. However, there often exists a knowledge gap for these young couples during the decision making process and they end up making potentially regretful decisions. We would like to bridge this knowledge gap, and have hence chosen to base our project on creating a recommender system for BTO flats, utilizing the data from recent launches in Tampines, Eunos, Sengkang and Punggol. 
+This project develops an **Intelligent Clinical Decision Support System (ICDSS)** that focuses on explainable cardiovascular risk review. Instead of relying on one black-box prediction model, the system integrates three intelligent reasoning tracks:
 
+1. **Decision Automation** - deterministic clinical safety alerts using a Python rule engine.
+2. **Knowledge Discovery** - learned similarity matching against historical UCI Heart Disease patient cases.
+3. **Cognitive Systems** - Neo4j graph retrieval and Llama-based graph-grounded clinical rationale generation.
 
-Using the techniques imparted to us in lectures, our group first set out to build a sizeable knowledge base via conducting an interview and administering a survey. While building the system, we utilized tools such as Java to scrape real time data from HDB website and transform it into a database, CLIPS to synthesize the rule based reasoning process, and Python to integrate it into an easy to use UI for the everyday user. To add icing on the cake, we even hosted the system on a website so that the everyday user can access it through the click of a link.
+The system uses the UCI Heart Disease dataset as the structured clinical data source. The dataset is processed through a privacy-aware data pipeline that validates clinical fields, generates synthetic PII for demonstration, hashes synthetic patient identifiers, bucketizes key medical measurements, and creates synthetic clinical notes for enrichment. Patient records and clinical concepts are then ingested into Neo4j as a knowledge graph.
 
+The application is delivered as a Dockerized Streamlit dashboard. A one-click Windows launcher, `start.bat`, starts Neo4j, Ollama, and the Streamlit application. The user enters a natural-language patient case, and the system displays extracted patient information, rule alerts, learned similar cases, AI rationale, three-track performance metrics, and an interactive knowledge graph visualization.
 
-Our team had an amazing time working on this project, and hope to share our insights with everyone. Despite a focus on BTO flats, we would recommend it for everybody interested in understanding property market trends for residence or investment purposes. There truly are a wide array of factors behind the decision to invest in a property, and we only wish there was more time to work on the scope and scale of the project. 
+The key contribution of the project is the transparent reasoning chain. Each system output is connected to deterministic rules, similar historical cases, graph evidence, or constrained LLM synthesis. The system is intended as an educational clinical decision support MVP and not as a certified medical diagnostic tool.
 
 ---
 
 ## SECTION 3 : CREDITS / PROJECT CONTRIBUTION
 
-| Official Full Name  | Student ID (MTech Applicable)  | Work Items (Who Did What) | Email (Optional) |
-| :------------ |:---------------:| :-----| :-----|
-| Desmond Chua | A1234567A | xxxxxxxxxx yyyyyyyyyy zzzzzzzzzz| A1234567A@nus.edu.sg |
-| Chang Ye Han | A1234567B | xxxxxxxxxx yyyyyyyyyy zzzzzzzzzz| A1234567B@gmail.com |
-| Chee Jia Wei | A1234567C | xxxxxxxxxx yyyyyyyyyy zzzzzzzzzz| A1234567C@outlook.com |
-| Ganesh Kumar | A1234567D | xxxxxxxxxx yyyyyyyyyy zzzzzzzzzz| A1234567D@yahoo.com |
-| Jeanette Lim | A1234567E | xxxxxxxxxx yyyyyyyyyy zzzzzzzzzz| A1234567E@qq.com |
+| Official Full Name | Student ID | Work Items (Who Did What) | Email (Optional) |
+| :--- | :---: | :--- | :--- |
+| Xiao Zhenhuan | A403040523R | Individual project owner. Designed the ICDSS concept, implemented the Dockerized architecture, built the Streamlit UI, developed the data pipeline, Neo4j ingestion, rule engine, learned similarity engine, cognitive Graph-RAG workflow, metrics dashboard, graph visualization, one-click launcher, README, and project report. | - |
 
 ---
 
 ## SECTION 4 : VIDEO OF SYSTEM MODELLING & USE CASE DEMO
 
-[![Sudoku AI Solver](http://img.youtube.com/vi/-AiYLUjP6o8/0.jpg)](https://youtu.be/-AiYLUjP6o8 "Sudoku AI Solver")
+Video demonstration will be added before final submission.
 
-Note: It is not mandatory for every project member to appear in video presentation; Presentation by one project member is acceptable. 
-More reference video presentations [here](https://telescopeuser.wordpress.com/2018/03/31/master-of-technology-solution-know-how-video-index-2/ "video presentations")
+Suggested demo coverage:
+
+- one-click startup using `start.bat`
+- data pipeline execution
+- Neo4j graph ingestion
+- patient case input
+- Track 1 rule alerts
+- Track 2 learned similar historical cases
+- Track 3 cognitive rationale
+- performance metrics interpretation
+- knowledge graph visualization
 
 ---
 
 ## SECTION 5 : USER GUIDE
 
-`Refer to appendix <Installation & User Guide> in project report at Github Folder: ProjectReport`
+### [ 1 ] Prerequisites
 
-### [ 1 ] To run the system using iss-vm
+The system is designed to run locally through Docker.
 
-> download pre-built virtual machine from http://bit.ly/iss-vm
+Required software:
 
-> start iss-vm
+- Windows machine
+- Docker Desktop installed and running
+- Git, if cloning from a repository
+- Recommended 16 GB RAM for the default `llama3:8b` model
 
-> open terminal in iss-vm
+If the machine has limited GPU memory, the launcher can automatically switch to a lighter model, `llama3.2:1b`, for more reliable startup.
 
-> $ git clone https://github.com/telescopeuser/Workshop-Project-Submission-Template.git
+### [ 2 ] One-Click Startup
 
-> $ source activate iss-env-py2
+From the project folder:
 
-> (iss-env-py2) $ cd Workshop-Project-Submission-Template/SystemCode/clips
+```text
+RS_Practice_Module/
+```
 
-> (iss-env-py2) $ python app.py
+Double-click:
 
-> **Go to URL using web browser** http://0.0.0.0:5000 or http://127.0.0.1:5000
+```text
+start.bat
+```
 
-### [ 2 ] To run the system in other/local machine:
-### Install additional necessary libraries. This application works in python 2 only.
+The launcher will automatically:
 
-> $ sudo apt-get install python-clips clips build-essential libssl-dev libffi-dev python-dev python-pip
+- check whether Docker is installed
+- check whether Docker Desktop is running
+- create required folders if missing
+- create `.env` if missing
+- detect NVIDIA GPU support
+- configure CPU or GPU mode
+- build and start Docker services
+- wait for the Streamlit health check
+- open the browser at `http://127.0.0.1:8501`
 
-> $ pip install pyclips flask flask-socketio eventlet simplejson pandas
+### [ 3 ] Manual Startup
+
+If manual startup is preferred:
+
+```powershell
+cd C:\Users\zhenh\Documents\PROJECTS\RS_Practice_Module
+docker compose up -d --build
+```
+
+Open the browser:
+
+```text
+http://127.0.0.1:8501
+```
+
+Neo4j browser is available at:
+
+```text
+http://127.0.0.1:7474
+```
+
+### [ 4 ] Running the ICDSS Workflow
+
+1. Start the system using `start.bat`.
+2. Confirm that the Streamlit dashboard opens.
+3. In the sidebar, confirm that `heart_disease_uci.csv` is detected under `raw_data/`.
+4. Click **Run Data Pipeline**.
+5. Click **Ingest into Neo4j**.
+6. Enter a patient case in the chat input box.
+7. Review the outputs:
+   - extracted clinical parameters
+   - Track 1 safety alerts
+   - Track 2 learned similar historical cases
+   - Track 3 AI clinical rationale
+   - MVP performance metrics
+   - knowledge graph visualization
+
+### [ 5 ] Main System Files
+
+| File | Purpose |
+| --- | --- |
+| `app.py` | Streamlit dashboard and triple-track orchestration |
+| `data_pipeline.py` | CSV validation, anonymization, bucketization, synthetic note generation |
+| `ingest.py` | Neo4j graph ingestion and optional PDF/LLM enrichment |
+| `rule_engine.py` | Track 1 decision automation |
+| `similarity_engine.py` | Track 2 learned similarity matching |
+| `cognitive_engine.py` | Track 3 graph retrieval and LLM rationale |
+| `trace_logger.py` | Audit trace logging |
+| `docker-compose.yml` | Docker service orchestration |
+| `start.bat` | One-click Windows launcher |
 
 ---
+
 ## SECTION 6 : PROJECT REPORT / PAPER
 
-`Refer to project report at Github Folder: ProjectReport`
+Refer to the project report in this repository:
 
-**Recommended Sections for Project Report / Paper:**
+```text
+projectreport.md
+```
+
+The project report includes:
+
 - Executive Summary / Paper Abstract
-- Sponsor Company Introduction (if applicable)
+- Sponsor Company Introduction
 - Business Problem Background
 - Market Research
 - Project Objectives & Success Measurements
-- Project Solution (To detail domain modelling & system design.)
-- Project Implementation (To detail system development & testing approach.)
-- Project Performance & Validation (To prove project objectives are met.)
-- Project Conclusions: Findings & Recommendation
-- Appendix of report: Project Proposal
-- Appendix of report: Mapped System Functionalities against knowledge, techniques and skills of modular courses: MR, RS, CGS
-- Appendix of report: Installation and User Guide
-- Appendix of report: 1-2 pages individual project report per project member, including: Individual reflection of project journey: (1) personal contribution to group project (2) what learnt is most useful for you (3) how you can apply the knowledge and skills in other situations or your workplaces
-- Appendix of report: List of Abbreviations (if applicable)
-- Appendix of report: References (if applicable)
+- Project Solution
+- Project Implementation
+- Project Performance & Validation
+- Project Conclusions, Findings & Recommendations
+- Appendix: Project Proposal Summary
+- Appendix: Mapped System Functionalities against Reasoning Techniques
+- Appendix: Installation and User Guide
+- Appendix: Individual Reflection Placeholder
+- Appendix: Abbreviations
+- Appendix: References
 
 ---
+
 ## SECTION 7 : MISCELLANEOUS
 
-`Refer to Github Folder: Miscellaneous`
+### Dataset
 
-### HDB_BTO_SURVEY.xlsx
-* Results of survey
-* Insights derived, which were subsequently used in our system
+The project uses the UCI Heart Disease dataset:
+
+```text
+raw_data/heart_disease_uci.csv
+```
+
+The dataset is de-identified and does not contain real PII. Synthetic PII is generated only to demonstrate anonymization and is removed after hashing.
+
+### Generated Runtime Folders
+
+The following folders are generated or populated during runtime and should not be treated as source files:
+
+```text
+data/
+processed_data/
+```
+
+### Important Disclaimer
+
+This ICDSS is an academic MVP for intelligent reasoning system demonstration. It is not a certified medical device and must not be used for real clinical diagnosis or treatment decisions. All outputs require qualified clinician review.
+
+### References
+
+- Grand View Research. (2024). Clinical Decision Support Systems Market Size, Share & Trends Analysis Report.
+- McKinsey Global Institute. (2011). Big Data: The Next Frontier for Innovation, Competition, and Productivity.
+- National Institutes of Health. (2023). Explainable Artificial Intelligence for Healthcare.
+- UCI Machine Learning Repository. (1988). Heart Disease Data Set.
+- World Health Organization. (2021). Cardiovascular diseases fact sheet.
 
 ---
 
-### <<<<<<<<<<<<<<<<<<<< End of Template >>>>>>>>>>>>>>>>>>>>
-
----
-
-**This [Machine Reasoning (MR)](https://www.iss.nus.edu.sg/executive-education/course/detail/machine-reasoning "Machine Reasoning") course is part of the Analytics and Intelligent Systems and Graduate Certificate in [Intelligent Reasoning Systems (IRS)](https://www.iss.nus.edu.sg/stackable-certificate-programmes/intelligent-systems "Intelligent Reasoning Systems") series offered by [NUS-ISS](https://www.iss.nus.edu.sg "Institute of Systems Science, National University of Singapore").**
-
-**Lecturer: [GU Zhan (Sam)](https://www.iss.nus.edu.sg/about-us/staff/detail/201/GU%20Zhan "GU Zhan (Sam)")**
-
-[![alt text](https://www.iss.nus.edu.sg/images/default-source/About-Us/7.6.1-teaching-staff/sam-website.tmb-.png "Let's check Sam' profile page")](https://www.iss.nus.edu.sg/about-us/staff/detail/201/GU%20Zhan)
-
-**zhan.gu@nus.edu.sg**
+**Course Context:** Practice Module project for intelligent reasoning systems.
