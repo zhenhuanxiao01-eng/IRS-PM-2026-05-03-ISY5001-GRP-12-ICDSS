@@ -1,0 +1,701 @@
+[
+  {
+    "timestamp": "2026-05-02T21:13:30.067140+00:00",
+    "event": "RuleEvaluation",
+    "status": "Success",
+    "patient_data_keys": [
+      "resting_bp",
+      "sex",
+      "smoking",
+      "family_history_cvd",
+      "bmi"
+    ],
+    "alerts_fired": 3,
+    "alert_ids": [
+      "HTN_STAGE2",
+      "SMOKING_HTN_COMBO",
+      "SMOKING_CVD_RISK"
+    ]
+  },
+  {
+    "timestamp": "2026-05-02T21:13:30.726785+00:00",
+    "event": "SimilaritySearch",
+    "status": "Success",
+    "input_symptoms": [
+      "Hypertension",
+      "Hypercholesterolemia",
+      "Obesity",
+      "Smoking Habit",
+      "Cardiovascular Disease (Family History)",
+      "Family History of CVD",
+      "Smoking",
+      "Myocardial Infarction"
+    ],
+    "matches_found": 3,
+    "top_score": 0.8217,
+    "scoring": "learned_similarity",
+    "risk_burden": 7,
+    "learned_numeric_weights": {
+      "age": 1.286,
+      "resting_bp": 0.953,
+      "cholesterol": 1.779,
+      "max_heart_rate": 1.435
+    },
+    "cypher_query": "MATCH (p:Patient)\n    OPTIONAL MATCH (p)-[:HAS_SYMPTOM]->(s:Symptom)\n    OPTIONAL MATCH (p)-[:HAS_CONDITION]->(c:Condition)\n    OPTIONAL MATCH (p)-[:HAS_RISK_FACTOR]->(r:RiskFactor)\n    WITH p, COLLEC..."
+  },
+  {
+    "timestamp": "2026-05-02T21:13:30.972513+00:00",
+    "event": "GraphRetrieval",
+    "status": "Success",
+    "symptoms_queried": [
+      "Hypertension",
+      "Hypercholesterolemia",
+      "Obesity",
+      "Smoking Habit",
+      "Cardiovascular Disease (Family History)",
+      "Family History of CVD",
+      "Smoking",
+      "Myocardial Infarction"
+    ],
+    "diseases_found": 28,
+    "treatments_found": 878,
+    "guidelines_found": 33
+  },
+  {
+    "timestamp": "2026-05-02T21:13:30.980151+00:00",
+    "event": "CognitiveSynthesis",
+    "status": "Success",
+    "prompt_length": 56838,
+    "symptoms_count": 8,
+    "graph_evidence_count": 939,
+    "alerts_count": 3,
+    "similar_cases_count": 3,
+    "assembled_prompt": "You are a clinical decision support system. Based ONLY on the evidence provided below, generate a structured diagnostic assessment for the patient. Do NOT invent information not present in the evidence. If graph evidence is missing or weak, state that limitation clearly instead of filling the gap from general medical knowledge.\n\nPATIENT PRESENTATION:\nSeventy-year-old male, BP 152/95, LDL 168, BMI 31, active smoker, family history of CVD\n\nEXTRACTED SYMPTOMS: Hypertension, Hypercholesterolemia, Ob..."
+  },
+  {
+    "timestamp": "2026-05-02T21:14:37.971177+00:00",
+    "event": "RuleEvaluation",
+    "status": "Success",
+    "patient_data_keys": [
+      "resting_bp",
+      "sex",
+      "smoking",
+      "family_history_cvd",
+      "bmi"
+    ],
+    "alerts_fired": 3,
+    "alert_ids": [
+      "HTN_STAGE2",
+      "SMOKING_HTN_COMBO",
+      "SMOKING_CVD_RISK"
+    ]
+  },
+  {
+    "timestamp": "2026-05-02T21:14:38.052796+00:00",
+    "event": "SimilaritySearch",
+    "status": "Success",
+    "input_symptoms": [
+      "Hypertension",
+      "Hypercholesterolemia",
+      "Obesity (Bmi 31)",
+      "Smoking Habit",
+      "Cardiovascular Disease (Family History)",
+      "Family History of CVD",
+      "Smoking",
+      "Myocardial Infarction",
+      "Obesity"
+    ],
+    "matches_found": 3,
+    "top_score": 0.8217,
+    "scoring": "learned_similarity",
+    "risk_burden": 7,
+    "learned_numeric_weights": {
+      "age": 1.286,
+      "resting_bp": 0.953,
+      "cholesterol": 1.779,
+      "max_heart_rate": 1.435
+    },
+    "cypher_query": "MATCH (p:Patient)\n    OPTIONAL MATCH (p)-[:HAS_SYMPTOM]->(s:Symptom)\n    OPTIONAL MATCH (p)-[:HAS_CONDITION]->(c:Condition)\n    OPTIONAL MATCH (p)-[:HAS_RISK_FACTOR]->(r:RiskFactor)\n    WITH p, COLLEC..."
+  },
+  {
+    "timestamp": "2026-05-02T21:14:38.093937+00:00",
+    "event": "GraphRetrieval",
+    "status": "Success",
+    "symptoms_queried": [
+      "Hypertension",
+      "Hypercholesterolemia",
+      "Obesity (Bmi 31)",
+      "Smoking Habit",
+      "Cardiovascular Disease (Family History)",
+      "Family History of CVD",
+      "Smoking",
+      "Myocardial Infarction",
+      "Obesity"
+    ],
+    "diseases_found": 28,
+    "treatments_found": 878,
+    "guidelines_found": 33
+  },
+  {
+    "timestamp": "2026-05-02T21:14:38.101329+00:00",
+    "event": "CognitiveSynthesis",
+    "status": "Success",
+    "prompt_length": 56856,
+    "symptoms_count": 9,
+    "graph_evidence_count": 939,
+    "alerts_count": 3,
+    "similar_cases_count": 3,
+    "assembled_prompt": "You are a clinical decision support system. Based ONLY on the evidence provided below, generate a structured diagnostic assessment for the patient. Do NOT invent information not present in the evidence. If graph evidence is missing or weak, state that limitation clearly instead of filling the gap from general medical knowledge.\n\nPATIENT PRESENTATION:\nSeventy-year-old male, BP 152/95, LDL 168, BMI 31, active smoker, family history of CVD\n\nEXTRACTED SYMPTOMS: Hypertension, Hypercholesterolemia, Ob..."
+  },
+  {
+    "timestamp": "2026-05-02T21:14:50.484839+00:00",
+    "event": "RuleEvaluation",
+    "status": "Success",
+    "patient_data_keys": [
+      "resting_bp",
+      "sex",
+      "smoking",
+      "family_history_cvd",
+      "bmi",
+      "age",
+      "cholesterol",
+      "ldl_cholesterol",
+      "max_heart_rate",
+      "ascvd_risk",
+      "fasting_blood_sugar",
+      "prediabetes",
+      "exercise_angina",
+      "st_depression",
+      "num_vessels",
+      "chest_pain_present",
+      "sedentary_lifestyle",
+      "syncope",
+      "fainting",
+      "dyspnea_at_rest"
+    ],
+    "alerts_fired": 6,
+    "alert_ids": [
+      "HTN_ELDERLY",
+      "HTN_STAGE2",
+      "SMOKING_HTN_COMBO",
+      "ELDERLY_MULTI_RISK",
+      "SMOKING_CVD_RISK",
+      "SEDENTARY_LIFESTYLE"
+    ]
+  },
+  {
+    "timestamp": "2026-05-02T21:14:50.543650+00:00",
+    "event": "SimilaritySearch",
+    "status": "Success",
+    "input_symptoms": [
+      "Hypertension",
+      "Hypercholesterolemia",
+      "Obesity (Bmi 31)",
+      "Smoking Habit",
+      "Cardiovascular Disease (Family History)",
+      "Family History of CVD",
+      "Smoking",
+      "Myocardial Infarction",
+      "Obesity"
+    ],
+    "matches_found": 3,
+    "top_score": 0.7372,
+    "scoring": "learned_similarity",
+    "risk_burden": 8,
+    "learned_numeric_weights": {
+      "age": 1.286,
+      "resting_bp": 0.953,
+      "cholesterol": 1.779,
+      "max_heart_rate": 1.435
+    },
+    "cypher_query": "MATCH (p:Patient)\n    OPTIONAL MATCH (p)-[:HAS_SYMPTOM]->(s:Symptom)\n    OPTIONAL MATCH (p)-[:HAS_CONDITION]->(c:Condition)\n    OPTIONAL MATCH (p)-[:HAS_RISK_FACTOR]->(r:RiskFactor)\n    WITH p, COLLEC..."
+  },
+  {
+    "timestamp": "2026-05-02T21:14:50.568957+00:00",
+    "event": "GraphRetrieval",
+    "status": "Success",
+    "symptoms_queried": [
+      "Hypertension",
+      "Hypercholesterolemia",
+      "Obesity (Bmi 31)",
+      "Smoking Habit",
+      "Cardiovascular Disease (Family History)",
+      "Family History of CVD",
+      "Smoking",
+      "Myocardial Infarction",
+      "Obesity"
+    ],
+    "diseases_found": 28,
+    "treatments_found": 878,
+    "guidelines_found": 33
+  },
+  {
+    "timestamp": "2026-05-02T21:14:50.575092+00:00",
+    "event": "CognitiveSynthesis",
+    "status": "Success",
+    "prompt_length": 57377,
+    "symptoms_count": 9,
+    "graph_evidence_count": 939,
+    "alerts_count": 6,
+    "similar_cases_count": 3,
+    "assembled_prompt": "You are a clinical decision support system. Based ONLY on the evidence provided below, generate a structured diagnostic assessment for the patient. Do NOT invent information not present in the evidence. If graph evidence is missing or weak, state that limitation clearly instead of filling the gap from general medical knowledge.\n\nPATIENT PRESENTATION:\nSeventy-year-old male, BP 152/95, LDL 168, BMI 31, active smoker, family history of CVD\n\nEXTRACTED SYMPTOMS: Hypertension, Hypercholesterolemia, Ob..."
+  },
+  {
+    "timestamp": "2026-05-02T21:51:09.677324+00:00",
+    "event": "RuleEvaluation",
+    "status": "Success",
+    "patient_data_keys": [
+      "resting_bp",
+      "sex",
+      "smoking",
+      "family_history_cvd",
+      "bmi",
+      "age",
+      "cholesterol",
+      "ldl_cholesterol",
+      "max_heart_rate",
+      "ascvd_risk",
+      "fasting_blood_sugar",
+      "prediabetes",
+      "exercise_angina",
+      "st_depression",
+      "num_vessels",
+      "chest_pain_present",
+      "sedentary_lifestyle",
+      "syncope",
+      "fainting",
+      "dyspnea_at_rest"
+    ],
+    "alerts_fired": 6,
+    "alert_ids": [
+      "HTN_ELDERLY",
+      "HTN_STAGE2",
+      "SMOKING_HTN_COMBO",
+      "ELDERLY_MULTI_RISK",
+      "SMOKING_CVD_RISK",
+      "SEDENTARY_LIFESTYLE"
+    ]
+  },
+  {
+    "timestamp": "2026-05-02T21:51:09.746055+00:00",
+    "event": "SimilaritySearch",
+    "status": "Success",
+    "input_symptoms": [
+      "Hypertension",
+      "Hypercholesterolemia",
+      "Obesity",
+      "Smoking Habit",
+      "Cardiovascular Disease (Family History)",
+      "Family History of CVD",
+      "Smoking",
+      "Myocardial Infarction"
+    ],
+    "matches_found": 3,
+    "top_score": 0.7372,
+    "scoring": "learned_similarity",
+    "risk_burden": 8,
+    "learned_numeric_weights": {
+      "age": 1.286,
+      "resting_bp": 0.953,
+      "cholesterol": 1.779,
+      "max_heart_rate": 1.435
+    },
+    "cypher_query": "MATCH (p:Patient)\n    OPTIONAL MATCH (p)-[:HAS_SYMPTOM]->(s:Symptom)\n    OPTIONAL MATCH (p)-[:HAS_CONDITION]->(c:Condition)\n    OPTIONAL MATCH (p)-[:HAS_RISK_FACTOR]->(r:RiskFactor)\n    WITH p, COLLEC..."
+  },
+  {
+    "timestamp": "2026-05-02T21:51:09.767000+00:00",
+    "event": "GraphRetrieval",
+    "status": "Success",
+    "symptoms_queried": [
+      "Hypertension",
+      "Hypercholesterolemia",
+      "Obesity",
+      "Smoking Habit",
+      "Cardiovascular Disease (Family History)",
+      "Family History of CVD",
+      "Smoking",
+      "Myocardial Infarction"
+    ],
+    "diseases_found": 28,
+    "treatments_found": 878,
+    "guidelines_found": 33
+  },
+  {
+    "timestamp": "2026-05-02T21:51:09.773865+00:00",
+    "event": "CognitiveSynthesis",
+    "status": "Success",
+    "prompt_length": 57359,
+    "symptoms_count": 8,
+    "graph_evidence_count": 939,
+    "alerts_count": 6,
+    "similar_cases_count": 3,
+    "assembled_prompt": "You are a clinical decision support system. Based ONLY on the evidence provided below, generate a structured diagnostic assessment for the patient. Do NOT invent information not present in the evidence. If graph evidence is missing or weak, state that limitation clearly instead of filling the gap from general medical knowledge.\n\nPATIENT PRESENTATION:\nSeventy-year-old male, BP 152/95, LDL 168, BMI 31, active smoker, family history of CVD\n\nEXTRACTED SYMPTOMS: Hypertension, Hypercholesterolemia, Ob..."
+  },
+  {
+    "timestamp": "2026-05-03T03:15:59.383278+00:00",
+    "event": "RuleEvaluation",
+    "status": "Success",
+    "patient_data_keys": [
+      "resting_bp",
+      "sex",
+      "smoking",
+      "family_history_cvd",
+      "bmi"
+    ],
+    "alerts_fired": 3,
+    "alert_ids": [
+      "HTN_STAGE2",
+      "SMOKING_HTN_COMBO",
+      "SMOKING_CVD_RISK"
+    ]
+  },
+  {
+    "timestamp": "2026-05-03T03:16:00.165752+00:00",
+    "event": "SimilaritySearch",
+    "status": "Success",
+    "input_symptoms": [
+      "Hypertension",
+      "Hypercholesterolemia",
+      "Obesity",
+      "Smoking Habit",
+      "Cardiovascular Disease (Family History)",
+      "Family History of CVD",
+      "Myocardial Infarction",
+      "Smoking"
+    ],
+    "matches_found": 3,
+    "top_score": 0.8217,
+    "scoring": "learned_similarity",
+    "risk_burden": 7,
+    "learned_numeric_weights": {
+      "age": 1.286,
+      "resting_bp": 0.953,
+      "cholesterol": 1.779,
+      "max_heart_rate": 1.435
+    },
+    "cypher_query": "MATCH (p:Patient)\n    OPTIONAL MATCH (p)-[:HAS_SYMPTOM]->(s:Symptom)\n    OPTIONAL MATCH (p)-[:HAS_CONDITION]->(c:Condition)\n    OPTIONAL MATCH (p)-[:HAS_RISK_FACTOR]->(r:RiskFactor)\n    WITH p, COLLEC..."
+  },
+  {
+    "timestamp": "2026-05-03T03:16:00.427003+00:00",
+    "event": "GraphRetrieval",
+    "status": "Success",
+    "symptoms_queried": [
+      "Hypertension",
+      "Hypercholesterolemia",
+      "Obesity",
+      "Smoking Habit",
+      "Cardiovascular Disease (Family History)",
+      "Family History of CVD",
+      "Myocardial Infarction",
+      "Smoking"
+    ],
+    "diseases_found": 28,
+    "treatments_found": 878,
+    "guidelines_found": 33
+  },
+  {
+    "timestamp": "2026-05-03T03:16:00.434859+00:00",
+    "event": "CognitiveSynthesis",
+    "status": "Success",
+    "prompt_length": 56839,
+    "symptoms_count": 8,
+    "graph_evidence_count": 939,
+    "alerts_count": 3,
+    "similar_cases_count": 3,
+    "assembled_prompt": "You are a clinical decision support system. Based ONLY on the evidence provided below, generate a structured diagnostic assessment for the patient. Do NOT invent information not present in the evidence. If graph evidence is missing or weak, state that limitation clearly instead of filling the gap from general medical knowledge.\n\nPATIENT PRESENTATION:\nSeventy-year-old male, BP 152/95, LDL 168, BMI 31, active smoker, family history of CVD.\n\nEXTRACTED SYMPTOMS: Hypertension, Hypercholesterolemia, O..."
+  },
+  {
+    "timestamp": "2026-05-03T03:26:18.871248+00:00",
+    "event": "RuleEvaluation",
+    "status": "Success",
+    "patient_data_keys": [
+      "resting_bp",
+      "sex",
+      "smoking",
+      "family_history_cvd",
+      "bmi"
+    ],
+    "alerts_fired": 3,
+    "alert_ids": [
+      "HTN_STAGE2",
+      "SMOKING_HTN_COMBO",
+      "SMOKING_CVD_RISK"
+    ]
+  },
+  {
+    "timestamp": "2026-05-03T03:26:18.952630+00:00",
+    "event": "SimilaritySearch",
+    "status": "Success",
+    "input_symptoms": [
+      "Hypertension",
+      "Hypercholesterolemia",
+      "Obesity",
+      "Smoking Habit",
+      "Cardiovascular Disease (Family History)",
+      "Family History of CVD",
+      "Myocardial Infarction",
+      "Smoking"
+    ],
+    "matches_found": 3,
+    "top_score": 0.8217,
+    "scoring": "learned_similarity",
+    "risk_burden": 7,
+    "learned_numeric_weights": {
+      "age": 1.286,
+      "resting_bp": 0.953,
+      "cholesterol": 1.779,
+      "max_heart_rate": 1.435
+    },
+    "cypher_query": "MATCH (p:Patient)\n    OPTIONAL MATCH (p)-[:HAS_SYMPTOM]->(s:Symptom)\n    OPTIONAL MATCH (p)-[:HAS_CONDITION]->(c:Condition)\n    OPTIONAL MATCH (p)-[:HAS_RISK_FACTOR]->(r:RiskFactor)\n    WITH p, COLLEC..."
+  },
+  {
+    "timestamp": "2026-05-03T03:26:18.982579+00:00",
+    "event": "GraphRetrieval",
+    "status": "Success",
+    "symptoms_queried": [
+      "Hypertension",
+      "Hypercholesterolemia",
+      "Obesity",
+      "Smoking Habit",
+      "Cardiovascular Disease (Family History)",
+      "Family History of CVD",
+      "Myocardial Infarction",
+      "Smoking"
+    ],
+    "diseases_found": 28,
+    "treatments_found": 878,
+    "guidelines_found": 33
+  },
+  {
+    "timestamp": "2026-05-03T03:26:18.991407+00:00",
+    "event": "CognitiveSynthesis",
+    "status": "Success",
+    "prompt_length": 56839,
+    "symptoms_count": 8,
+    "graph_evidence_count": 939,
+    "alerts_count": 3,
+    "similar_cases_count": 3,
+    "assembled_prompt": "You are a clinical decision support system. Based ONLY on the evidence provided below, generate a structured diagnostic assessment for the patient. Do NOT invent information not present in the evidence. If graph evidence is missing or weak, state that limitation clearly instead of filling the gap from general medical knowledge.\n\nPATIENT PRESENTATION:\nSeventy-year-old male, BP 152/95, LDL 168, BMI 31, active smoker, family history of CVD.\n\nEXTRACTED SYMPTOMS: Hypertension, Hypercholesterolemia, O..."
+  },
+  {
+    "timestamp": "2026-05-03T03:26:41.614272+00:00",
+    "event": "RuleEvaluation",
+    "status": "Success",
+    "patient_data_keys": [
+      "resting_bp",
+      "sex",
+      "smoking",
+      "family_history_cvd",
+      "bmi"
+    ],
+    "alerts_fired": 3,
+    "alert_ids": [
+      "HTN_STAGE2",
+      "SMOKING_HTN_COMBO",
+      "SMOKING_CVD_RISK"
+    ]
+  },
+  {
+    "timestamp": "2026-05-03T03:26:41.679140+00:00",
+    "event": "SimilaritySearch",
+    "status": "Success",
+    "input_symptoms": [
+      "Hypertension",
+      "Hypercholesterolemia",
+      "Obesity",
+      "Smoking Habit",
+      "Cardiovascular Disease (Family History)",
+      "Family History of CVD",
+      "Myocardial Infarction",
+      "Smoking"
+    ],
+    "matches_found": 3,
+    "top_score": 0.8217,
+    "scoring": "learned_similarity",
+    "risk_burden": 7,
+    "learned_numeric_weights": {
+      "age": 1.286,
+      "resting_bp": 0.953,
+      "cholesterol": 1.779,
+      "max_heart_rate": 1.435
+    },
+    "cypher_query": "MATCH (p:Patient)\n    OPTIONAL MATCH (p)-[:HAS_SYMPTOM]->(s:Symptom)\n    OPTIONAL MATCH (p)-[:HAS_CONDITION]->(c:Condition)\n    OPTIONAL MATCH (p)-[:HAS_RISK_FACTOR]->(r:RiskFactor)\n    WITH p, COLLEC..."
+  },
+  {
+    "timestamp": "2026-05-03T03:26:41.702478+00:00",
+    "event": "GraphRetrieval",
+    "status": "Success",
+    "symptoms_queried": [
+      "Hypertension",
+      "Hypercholesterolemia",
+      "Obesity",
+      "Smoking Habit",
+      "Cardiovascular Disease (Family History)",
+      "Family History of CVD",
+      "Myocardial Infarction",
+      "Smoking"
+    ],
+    "diseases_found": 28,
+    "treatments_found": 878,
+    "guidelines_found": 33
+  },
+  {
+    "timestamp": "2026-05-03T03:26:41.710265+00:00",
+    "event": "CognitiveSynthesis",
+    "status": "Success",
+    "prompt_length": 56839,
+    "symptoms_count": 8,
+    "graph_evidence_count": 939,
+    "alerts_count": 3,
+    "similar_cases_count": 3,
+    "assembled_prompt": "You are a clinical decision support system. Based ONLY on the evidence provided below, generate a structured diagnostic assessment for the patient. Do NOT invent information not present in the evidence. If graph evidence is missing or weak, state that limitation clearly instead of filling the gap from general medical knowledge.\n\nPATIENT PRESENTATION:\nSeventy-year-old male, BP 152/95, LDL 168, BMI 31, active smoker, family history of CVD.\n\nEXTRACTED SYMPTOMS: Hypertension, Hypercholesterolemia, O..."
+  },
+  {
+    "timestamp": "2026-05-03T03:33:17.309189+00:00",
+    "event": "RuleEvaluation",
+    "status": "Success",
+    "patient_data_keys": [
+      "resting_bp",
+      "sex",
+      "smoking",
+      "family_history_cvd",
+      "bmi"
+    ],
+    "alerts_fired": 3,
+    "alert_ids": [
+      "HTN_STAGE2",
+      "SMOKING_HTN_COMBO",
+      "SMOKING_CVD_RISK"
+    ]
+  },
+  {
+    "timestamp": "2026-05-03T03:33:17.366505+00:00",
+    "event": "SimilaritySearch",
+    "status": "Success",
+    "input_symptoms": [
+      "Hypertension",
+      "Hypercholesterolemia",
+      "Obesity",
+      "Smoking Habit",
+      "Cardiovascular Disease (Family History)",
+      "Family History of CVD",
+      "Myocardial Infarction",
+      "Smoking"
+    ],
+    "matches_found": 3,
+    "top_score": 0.8217,
+    "scoring": "learned_similarity",
+    "risk_burden": 7,
+    "learned_numeric_weights": {
+      "age": 1.286,
+      "resting_bp": 0.953,
+      "cholesterol": 1.779,
+      "max_heart_rate": 1.435
+    },
+    "cypher_query": "MATCH (p:Patient)\n    OPTIONAL MATCH (p)-[:HAS_SYMPTOM]->(s:Symptom)\n    OPTIONAL MATCH (p)-[:HAS_CONDITION]->(c:Condition)\n    OPTIONAL MATCH (p)-[:HAS_RISK_FACTOR]->(r:RiskFactor)\n    WITH p, COLLEC..."
+  },
+  {
+    "timestamp": "2026-05-03T03:33:17.387401+00:00",
+    "event": "GraphRetrieval",
+    "status": "Success",
+    "symptoms_queried": [
+      "Hypertension",
+      "Hypercholesterolemia",
+      "Obesity",
+      "Smoking Habit",
+      "Cardiovascular Disease (Family History)",
+      "Family History of CVD",
+      "Myocardial Infarction",
+      "Smoking"
+    ],
+    "diseases_found": 28,
+    "treatments_found": 878,
+    "guidelines_found": 33
+  },
+  {
+    "timestamp": "2026-05-03T03:33:17.394542+00:00",
+    "event": "CognitiveSynthesis",
+    "status": "Success",
+    "prompt_length": 56839,
+    "symptoms_count": 8,
+    "graph_evidence_count": 939,
+    "alerts_count": 3,
+    "similar_cases_count": 3,
+    "assembled_prompt": "You are a clinical decision support system. Based ONLY on the evidence provided below, generate a structured diagnostic assessment for the patient. Do NOT invent information not present in the evidence. If graph evidence is missing or weak, state that limitation clearly instead of filling the gap from general medical knowledge.\n\nPATIENT PRESENTATION:\nSeventy-year-old male, BP 152/95, LDL 168, BMI 31, active smoker, family history of CVD.\n\nEXTRACTED SYMPTOMS: Hypertension, Hypercholesterolemia, O..."
+  },
+  {
+    "timestamp": "2026-05-03T08:22:45.466674+00:00",
+    "event": "RuleEvaluation",
+    "status": "Success",
+    "patient_data_keys": [
+      "resting_bp",
+      "sex",
+      "smoking",
+      "family_history_cvd",
+      "bmi"
+    ],
+    "alerts_fired": 3,
+    "alert_ids": [
+      "HTN_STAGE2",
+      "SMOKING_HTN_COMBO",
+      "SMOKING_CVD_RISK"
+    ]
+  },
+  {
+    "timestamp": "2026-05-03T08:22:45.526610+00:00",
+    "event": "SimilaritySearch",
+    "status": "Success",
+    "input_symptoms": [
+      "Hypertension",
+      "Hypercholesterolemia",
+      "Obesity (Bmi 31)",
+      "Smoking Habit",
+      "Cardiovascular Disease (Family History)",
+      "Family History of CVD",
+      "Myocardial Infarction",
+      "Smoking",
+      "Obesity"
+    ],
+    "matches_found": 3,
+    "top_score": 0.8217,
+    "scoring": "learned_similarity",
+    "risk_burden": 7,
+    "learned_numeric_weights": {
+      "age": 1.286,
+      "resting_bp": 0.953,
+      "cholesterol": 1.779,
+      "max_heart_rate": 1.435
+    },
+    "cypher_query": "MATCH (p:Patient)\n    OPTIONAL MATCH (p)-[:HAS_SYMPTOM]->(s:Symptom)\n    OPTIONAL MATCH (p)-[:HAS_CONDITION]->(c:Condition)\n    OPTIONAL MATCH (p)-[:HAS_RISK_FACTOR]->(r:RiskFactor)\n    WITH p, COLLEC..."
+  },
+  {
+    "timestamp": "2026-05-03T08:22:45.544543+00:00",
+    "event": "GraphRetrieval",
+    "status": "Success",
+    "symptoms_queried": [
+      "Hypertension",
+      "Hypercholesterolemia",
+      "Obesity (Bmi 31)",
+      "Smoking Habit",
+      "Cardiovascular Disease (Family History)",
+      "Family History of CVD",
+      "Myocardial Infarction",
+      "Smoking",
+      "Obesity"
+    ],
+    "diseases_found": 28,
+    "treatments_found": 878,
+    "guidelines_found": 33
+  },
+  {
+    "timestamp": "2026-05-03T08:22:45.551726+00:00",
+    "event": "CognitiveSynthesis",
+    "status": "Success",
+    "prompt_length": 56856,
+    "symptoms_count": 9,
+    "graph_evidence_count": 939,
+    "alerts_count": 3,
+    "similar_cases_count": 3,
+    "assembled_prompt": "You are a clinical decision support system. Based ONLY on the evidence provided below, generate a structured diagnostic assessment for the patient. Do NOT invent information not present in the evidence. If graph evidence is missing or weak, state that limitation clearly instead of filling the gap from general medical knowledge.\n\nPATIENT PRESENTATION:\nSeventy-year-old male, BP 152/95, LDL 168, BMI 31, active smoker, family history of CVD\n\nEXTRACTED SYMPTOMS: Hypertension, Hypercholesterolemia, Ob..."
+  }
+]

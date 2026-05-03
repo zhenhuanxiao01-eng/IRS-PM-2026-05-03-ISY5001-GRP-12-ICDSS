@@ -1,0 +1,67 @@
+services:
+  neo4j:
+    image: neo4j:5.26
+    container_name: icdss-neo4j
+    environment:
+      - NEO4J_AUTH=${NEO4J_AUTH}
+      - NEO4J_PLUGINS=["graph-data-science", "apoc"]
+      - NEO4J_dbms_security_procedures_unrestricted=gds.*,apoc.*
+      - NEO4J_server_memory_heap_max__size=2G
+      - NEO4J_server_memory_pagecache_size=1G
+    ports:
+      - "7474:7474"
+      - "7687:7687"
+    volumes:
+      - ./data/neo4j:/data
+    healthcheck:
+      test: ["CMD", "cypher-shell", "-u", "neo4j", "-p", "${DB_PASSWORD}", "RETURN 1"]
+      interval: 10s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+    restart: unless-stopped
+
+  ollama:
+    image: ollama/ollama:latest
+    container_name: icdss-ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ./data/ollama:/root/.ollama
+    entrypoint: >
+      sh -c "ollama serve & until ollama list >/dev/null 2>&1; do sleep 2; done && ollama pull ${OLLAMA_MODEL} && wait"
+    healthcheck:
+      test: ["CMD", "ollama", "list"]
+      interval: 10s
+      timeout: 10s
+      retries: 60
+      start_period: 120s
+    restart: unless-stopped
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: icdss-app
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./raw_data:/app/raw_data
+      - ./processed_data:/app/processed_data
+    env_file:
+      - .env
+    environment:
+      - PROCESSED_DATA_DIR=/app/processed_data
+      - TRACE_FILE=/app/processed_data/trace.json
+    depends_on:
+      neo4j:
+        condition: service_healthy
+      ollama:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8501/_stcore/health"]
+      interval: 10s
+      timeout: 10s
+      retries: 12
+      start_period: 30s
+    restart: unless-stopped

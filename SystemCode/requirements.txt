@@ -1,0 +1,8 @@
+streamlit==1.45.1
+neo4j==5.28.1
+pdfplumber==0.11.6
+streamlit-agraph==0.0.45
+requests==2.32.3
+python-dotenv==1.1.0
+faker==37.1.0
+pandas==2.2.3
