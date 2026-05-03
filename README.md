@@ -141,7 +141,7 @@ http://127.0.0.1:7474
 Refer to the project report in this repository:
 
 ```text
-projectreport.md
+./projectreport/projectreport.md
 ```
 
 ---
