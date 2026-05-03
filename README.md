@@ -144,24 +144,6 @@ Refer to the project report in this repository:
 projectreport.md
 ```
 
-The project report includes:
-
-- Executive Summary / Paper Abstract
-- Sponsor Company Introduction
-- Business Problem Background
-- Market Research
-- Project Objectives & Success Measurements
-- Project Solution
-- Project Implementation
-- Project Performance & Validation
-- Project Conclusions, Findings & Recommendations
-- Appendix: Project Proposal Summary
-- Appendix: Mapped System Functionalities against Reasoning Techniques
-- Appendix: Installation and User Guide
-- Appendix: Individual Reflection Placeholder
-- Appendix: Abbreviations
-- Appendix: References
-
 ---
 
 ## SECTION 7 : MISCELLANEOUS
