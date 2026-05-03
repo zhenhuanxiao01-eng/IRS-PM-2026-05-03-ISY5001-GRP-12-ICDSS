@@ -38,20 +38,8 @@ The key contribution of the project is the transparent reasoning chain. Each sys
 
 ## SECTION 4 : VIDEO OF SYSTEM MODELLING & USE CASE DEMO
 
-Video demonstration will be added before final submission.
-
-Suggested demo coverage:
-
-- one-click startup using `start.bat`
-- data pipeline execution
-- Neo4j graph ingestion
-- patient case input
-- Track 1 rule alerts
-- Track 2 learned similar historical cases
-- Track 3 cognitive rationale
-- performance metrics interpretation
-- knowledge graph visualization
-
+[![Watch the video](https://img.youtube.com/vi/SfBAu9MkzxA/maxresdefault.jpg)](https://www.youtube.com/watch?v=SfBAu9MkzxA)
+[![Watch the video](https://img.youtube.com/vi/yxjuJdJjMc4/maxresdefault.jpg)](https://www.youtube.com/watch?v=yxjuJdJjMc4)
 ---
 
 ## SECTION 5 : USER GUIDE
