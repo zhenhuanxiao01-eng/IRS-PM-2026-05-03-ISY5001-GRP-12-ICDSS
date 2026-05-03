@@ -167,9 +167,6 @@ data/
 processed_data/
 ```
 
-### Important Disclaimer
-
-This ICDSS is an academic MVP for intelligent reasoning system demonstration. It is not a certified medical device and must not be used for real clinical diagnosis or treatment decisions. All outputs require qualified clinician review.
 
 ### References
 
